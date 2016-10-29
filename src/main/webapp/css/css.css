@@ -1,0 +1,90 @@
+#friendList {
+	height: 500px;
+	margin-left: 33px;
+}
+
+#talkWindow {
+	height: 500px;
+	margin-left: 15px;
+}
+
+#msg {
+	height: 427px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#msg::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+#msg::-webkit-scrollbar-track {
+	background: #f3f3f3;
+}
+
+#msg::-webkit-scrollbar-thumb {
+	background: #26ccb8;
+	border-radius: 5px;
+}
+
+#msg li {
+	margin: -15px 15px;
+}
+
+#msg .floatR {
+	float: right;
+	margin-top: -15px;
+}
+
+#msg span {
+	word-break: break-word;
+	word-wrap: break-word;
+	white-space: -moz-pre-wrap;
+	white-space: -hp-pre-wrap;
+	white-space: -o-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: pre-line;
+}
+
+.arrow-left {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid #e7bd78;
+	position: relative;
+	left: -25px;
+	top: 30px;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.chatBubbles {
+	padding: 5px;
+	border-radius: 5px;
+	display: table;
+}
+
+.bg1 {
+	background-color: #e7bd78;
+}
+
+.arrow-right {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid #349c71;
+	position: relative;
+	right: -116px;
+	top: 30px;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.bg2 {
+	background-color: #349c71;
+}

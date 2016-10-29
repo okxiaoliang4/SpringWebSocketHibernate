@@ -1,61 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	session.setAttribute("userId", "1");
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>WebSocket</title>
-</head>
-<script type="text/javascript">
-	var socket;
-	if (!window.WebSocket) {
-		window.WebSocket = window.MozWebSocket;
-	}
-	if (window.WebSocket) {
-		socket = new WebSocket("ws://localhost:8888/websocket");
-
-		socket.onmessage = function(event) {
-			var ta = document.getElementById('responseText');
-			ta.value += event.data + "\r\n";
-		};
-
-		socket.onopen = function(event) {
-			var ta = document.getElementById('responseText');
-			ta.value = "打开WebSoket 服务正常，浏览器支持WebSoket!" + "\r\n";
-		};
-
-		socket.onclose = function(event) {
-			var ta = document.getElementById('responseText');
-			ta.value = "";
-			ta.value = "socket服务已关闭" + "\r\n";
-		};
-	} else {
-		alert("您的浏览器不支持WebSocket协议！");
-	}
-
-	function send(message) {
-		if (!window.WebSocket) {
-			return;
-		}
-		if (socket.readyState == WebSocket.OPEN) {
-			socket.send(message);
-		} else {
-			alert("WebSocket 连接没有建立成功！");
-		}
-
+<head lang="en">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/flat-ui.css">
+<script src="js/sockjs-0.3.min.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/flat-ui.min.js"></script>
+<title>登录</title>
+<script>
+	function login() {
+		$.ajax({
+			url : "<%=basePath%>user/login.do",
+			dataType : "json",
+			type : "post",
+			data : {
+				"username" : $("#login-name").val(),
+				"password" : $("#login-pass").val()
+			},
+			success : function(data) {
+				if (data.state == 0)
+					location.href = "main.jsp";
+			},
+			error : function(data) {
+				console.log(data);
+			}
+		});
 	}
 </script>
+</head>
+
 <body>
-	<form onSubmit="return false;">
-		<input type="text" name="message" value="Netty The Sinper" /> <br />
-		<br /> <input type="button" value="发送 WebSocket 请求消息"
-			onClick="send(this.form.message.value)" />
-		<hr color="blue" />
-		<h3>服务端返回的应答消息</h3>
-		<textarea id="responseText" style="width: 1024px; height: 300px;"></textarea>
-	</form>
+	<div class="container" style="margin-top: 20px;">
+		<div class="login">
+			<div class="login-screen">
+				<div class="login-icon">
+					<img src="img/icons/mail.png" alt="Welcome to Mail App">
+					<h4>
+						欢迎来到 <small>聊天室</small>
+					</h4>
+				</div>
+				<div class="login-form">
+					<div class="control-group">
+						<input name="username" type="text" class="login-field"
+							style="width: 312px;" value="" placeholder="用户名" id="login-name">
+					</div>
+					<div class="control-group">
+						<input name="password" type="password" class="login-field"
+							style="width: 312px;" value="" placeholder="密码" id="login-pass">
+					</div>
+					<a class="btn btn-primary btn-large btn-block"
+						href="javascript:login();">登录</a> <a class="login-link" href="#">忘记密码?</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

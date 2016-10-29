@@ -25,7 +25,6 @@ public class User implements Serializable {
 	private String password;
 	private String nickname;
 	private String headImg;
-	private String accessToken;
 	private Date registerDate;
 
 	public User() {
@@ -65,7 +64,7 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	@Column(nullable = false)
 	public String getNickname() {
 		return nickname;
@@ -83,14 +82,6 @@ public class User implements Serializable {
 		this.headImg = headImg;
 	}
 
-	public String getAccessToken() {
-		return accessToken;
-	}
-
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-	}
-
 	@Column(columnDefinition = "timestamp default current_timestamp")
 	public Date getRegisterDate() {
 		return registerDate;
@@ -104,8 +95,7 @@ public class User implements Serializable {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password="
 				+ password + ", nickname=" + nickname + ", headImg=" + headImg
-				+ ", accessToken=" + accessToken + ", registerDate="
-				+ registerDate + "]";
+				+ ", registerDate=" + registerDate + "]";
 	}
 
 }
