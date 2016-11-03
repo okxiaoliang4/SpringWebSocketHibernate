@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private AppService appService;
 	@Autowired
-	private HttpSession session;
+	private HttpSession httpSession;
 
 	@Override
 	public DataResult register(User user) {
@@ -51,8 +51,8 @@ public class UserServiceImpl implements UserService {
 				.add(Restrictions.eq("password", Util.MD5(user.getPassword())));
 		User findUser = dao.findOne(User.class, criterions);
 		if (findUser.getId() != null) {
-			session.setAttribute("userId", findUser.getId());
-			session.setAttribute("nickname", findUser.getNickname());
+			httpSession.setAttribute("userId", findUser.getId());
+			httpSession.setAttribute("nickname", findUser.getNickname());
 		}
 		dataResult.setMessage("login");
 		dataResult.setState(0);

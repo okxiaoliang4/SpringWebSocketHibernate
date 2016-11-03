@@ -11,4 +11,10 @@
 	<cache name="com.jelf.entity.User" maxElementsInMemory="2"
 		memoryStoreEvictionPolicy="LRU" eternal="true" diskPersistent="false"
 		overflowToDisk="false" maxElementsOnDisk="1000000" />
+	<cache name="com.jelf.entity.Message" maxElementsInMemory="2"
+		memoryStoreEvictionPolicy="LRU" eternal="true" diskPersistent="false"
+		overflowToDisk="false" maxElementsOnDisk="1000000" />
+	<cache name="com.jelf.entity.DataResult" maxElementsInMemory="2"
+		memoryStoreEvictionPolicy="LRU" eternal="true" diskPersistent="false"
+		overflowToDisk="false" maxElementsOnDisk="1000000" />
 </ehcache>
