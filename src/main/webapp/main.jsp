@@ -37,30 +37,14 @@ var userId="<%=userId%>";
 		<div class="row">
 			<div id="friendList" class="well col-xs-3"></div>
 			<div id="talkWindow" class="well col-xs-8">
-				<ul class="" id="msg">
-					<li class="floatL">
-						<div class="arrow-left"></div>
-						<div class='chatBubbles bg1'>
-							123123213213
-						</div>
-					</li>
-					<li class="floatL">
-						<div class="arrow-left"></div>
-						<div class='chatBubbles bg1'>
-							123123213213
-						</div>
-					</li>
-					<li class="floatR">
-						<div class="arrow-right"></div>
-						<div class='chatBubbles bg2'>
-							123123213213
-						</div>
-					</li>
-				</ul>
+				<div id="chatBox">
+					<ul id="chatBoxUl">
+					</ul>
+				</div>
 				<div class="input-group"
-					style="top: 458px; left: 0px; position: absolute;">
+					style="top: 457px;left: 0px;position: absolute;width: 100%;">
 					<input type="text" class="form-control" placeholder="发送信息..."
-						id="message" maxlength="150"> <span
+						id="message" maxlength="255"> <span
 						class="input-group-btn">
 						<button class="btn btn-default" type="button" id="send">发送</button>
 					</span>

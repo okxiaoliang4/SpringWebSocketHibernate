@@ -8,36 +8,42 @@
 	margin-left: 15px;
 }
 
-#msg {
+#chatBoxUl {
 	height: 427px;
 	overflow: scroll;
 	overflow-x: hidden;
 }
 
-#msg::-webkit-scrollbar {
+#chatBoxUl::-webkit-scrollbar {
 	width: 5px;
 	height: 5px;
 }
 
-#msg::-webkit-scrollbar-track {
+#chatBoxUl::-webkit-scrollbar-track {
 	background: #f3f3f3;
 }
 
-#msg::-webkit-scrollbar-thumb {
+#chatBoxUl::-webkit-scrollbar-thumb {
 	background: #26ccb8;
 	border-radius: 5px;
 }
 
-#msg li {
-	margin: -15px 15px;
+.bg1 {
+	background-color: #e7bd78;
 }
 
-#msg .floatR {
-	float: right;
-	margin-top: -15px;
+.bg2 {
+	background-color: #349c71;
 }
 
-#msg span {
+#chatBox ul {
+	padding: 10px;
+	max-height: 380px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#chatBox span {
 	word-break: break-word;
 	word-wrap: break-word;
 	white-space: -moz-pre-wrap;
@@ -49,42 +55,65 @@
 	white-space: pre-line;
 }
 
-.arrow-left {
-	width: 0;
-	height: 0;
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-right: 5px solid #e7bd78;
+.receiver {
+	clear: both;
+}
+
+.receiver div:nth-of-type(1) {
+	float: left;
+}
+
+.receiver div:nth-of-type(2) {
+	background-color: rgba(255, 118, 0, 0.58);
+	float: left;
+	margin: 10px 10px 10px 20px;
+	padding: 5px 5px 5px 0px;
+	border-radius: 7px;
+	max-width: 500px;
+}
+
+.receiver div:first-child img, .sender div:first-child img {
+	width: 50px;
+	height: 50px;
+}
+
+.sender {
+	clear: both;
+}
+
+.sender div:nth-child(1) {
+	float: right;
+}
+
+.sender div:nth-of-type(2) {
+	float: right;
+	background-color: rgba(84, 215, 255, 0.8);
+	margin: 10px 10px 10px 20px;
+	padding: 5px 0px 5px 5px;
+	border-radius: 7px;
+	max-width: 500px;
+}
+
+.right_triangle {
+	height: 0px;
+	width: 0px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent rgba(255, 118, 0, 0.58) transparent
+		transparent;
 	position: relative;
-	left: -25px;
-	top: 30px;
-	display: inline-block;
-	margin-left: 20px;
+	left: -16px;
+	top: 3px;
 }
 
-.chatBubbles {
-	padding: 5px;
-	border-radius: 5px;
-	display: table;
-}
-
-.bg1 {
-	background-color: #e7bd78;
-}
-
-.arrow-right {
-	width: 0;
-	height: 0;
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid #349c71;
+.left_triangle {
+	height: 0px;
+	width: 0px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent
+		rgba(84, 215, 255, 0.8);
 	position: relative;
-	right: -116px;
-	top: 30px;
-	display: inline-block;
-	margin-left: 20px;
-}
-
-.bg2 {
-	background-color: #349c71;
+	right: -16px;
+	top: 3px;
 }

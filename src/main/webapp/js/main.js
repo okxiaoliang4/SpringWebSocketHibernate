@@ -36,7 +36,7 @@ $(function() {
 		}
 		if (websocket != null) {
 			var data = JSON.stringify({
-				"toUserId" : "test",
+				"toUserId" : "91e8319d-2bef-48f9-b857-2bd139379399",
 				"message" : $('#message').val().trim()
 			});
 			$('#message').val("");
@@ -49,18 +49,29 @@ $(function() {
 		var data = jQuery.parseJSON(event.data);
 		var message = data.message.replace("&", "&amp;").replace("<", "&lt;");
 		var date = new Date(data.date).Format("hh:mm:ss");
+		console.log(message);
 		if (userId == data.userId) {
 			// 发送者
-			$("#msg").append(
-					"<li class='floatR'><div class='arrow-right'></div><div class='chatBubbles bg2'><span>"
-					+ message + "</span></div></li>");
-		}else{
-			$("#msg").append(
-					"<li><div class='arrow-left'></div><div class='chatBubbles bg1'><span>"
-					+ message + "</span></div></li>");
+			$("#chatBoxUl")
+					.append(
+							"<li><div class='sender'><div><input class='messageDataInput'data-messageid='cce8d038-e969-4a95-9e52-f1a9d17cb032'"
+									+ "type='hidden' data-time='"
+									+ date
+									+ "'><img src='img/headImage/b8cc5ae5-323d-4b22-a63c-ebab8041ae0d.png'></div><div>"
+									+ "<div class='left_triangle'></div><span>"
+									+ message + "</span></div></div></li>");
+		} else {
+			$("#chatBoxUl")
+					.append(
+							"<li><div class='receiver'><div><input class='messageDataInput'data-messageid='cce8d038-e969-4a95-9e52-f1a9d17cb032'"
+									+ "type='hidden' data-time='"
+									+ date
+									+ "'><img src='img/headImage/b8cc5ae5-323d-4b22-a63c-ebab8041ae0d.png'></div><div>"
+									+ "<div class='right_triangle'></div><span>"
+									+ message + "</span></div></div></li>");
 		}
-		$("#msg").stop().animate({
-			scrollTop : $('#msg')[0].scrollHeight
+		$("#chatBoxUl").stop().animate({
+			scrollTop : $('#chatBoxUl')[0].scrollHeight
 		}, 500);
 	}
 });

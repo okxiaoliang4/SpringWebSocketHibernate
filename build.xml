@@ -1,6 +1,6 @@
-<project default="create-sql-only" basedir="." name="news">
+<project default="create-sql-only" basedir="." name="SHWS">
 
-	<property name="ant-lib" value="C:/javawork2016/ant-lib" />
+	<property name="ant-lib" value="C:/myeclipse/myPlugins/ant-lib" />
 	<property name="src" value="src/main/resources" />
 	<property name="bin" value="target/classes" />
 	<property name="sqlfile" value="schema.sql" />
