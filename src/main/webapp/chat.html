@@ -66,15 +66,12 @@
 		</div>
 		<div style="text-align: center; clear: both"></div>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				if(!$.browser.webkit) {
-					$.mCustomScrollbar.defaults.axis = "y"; //enable 2 axis scrollbars by default
-					$(".chat-thread").mCustomScrollbar({
-						theme: "dark"
-					});
-				}
-			});
+			if(!$.browser.webkit) {
+				$.mCustomScrollbar.defaults.axis = "y"; //enable 2 axis scrollbars by default
+				$(".chat-thread").mCustomScrollbar({
+					theme: "dark"
+				});
+			}
 		</script>
 	</body>
-
 </html>
