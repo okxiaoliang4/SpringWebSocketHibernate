@@ -2,18 +2,14 @@
 	font-family: 'Noto Sans';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Noto Sans'), local('NotoSans'),
-		url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nD8E0i7KZn-EPnyo3HZu7kw.woff)
-		format('woff');
+	src: local('Noto Sans'), local('NotoSans'), url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
 body {
 	padding: 0;
 	margin: 0;
-	background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%,
-		#22254c 75%, #22254c 100%);
-	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%,
-		#22254c 75%, #22254c 100%);
+	background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -21,6 +17,19 @@ body {
 #convo {
 	margin: 60px auto 0 auto;
 	width: 820px;
+}
+.chat-thread::-webkit-scrollbar {
+	width: 5px;
+}
+
+.chat-thread::-webkit-scrollbar-track {
+	border-radius: 5px;
+	background-color: rgba(25, 147, 147, 0.1);
+}
+
+.chat-thread::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: rgba(25, 147, 147, 0.2);
 }
 
 .chat-thread::-webkit-scrollbar {
@@ -42,6 +51,7 @@ body {
 	list-style: none;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	overflow: -moz-hidden-unscrollable;
 }
 
 .chat-thread li {
@@ -53,9 +63,11 @@ body {
 	font: 16px/20px 'Noto Sans', sans-serif;
 	border-radius: 10px;
 	background-color: rgba(25, 147, 147, 0.2);
+	max-width: 600px;
 }
 
 /* Chat - Speech Bubble Arrow */
+
 .chat-thread li:after {
 	position: absolute;
 	top: 15px;
@@ -133,7 +145,9 @@ body {
 	outline: none;
 }
 
+
 /* Small screens */
+
 @media all and (max-width: 767px) {
 	.chat-thread {
 		width: 90%;
@@ -144,7 +158,10 @@ body {
 		width: 90%;
 	}
 }
+
+
 /* Medium and large screens */
+
 @media all and (min-width: 768px) {
 	.chat-thread {
 		width: 100%;
@@ -156,252 +173,60 @@ body {
 	}
 }
 
-@
-keyframes show-chat-even { 0% {
-	margin-left: -480px;
+@ keyframes show-chat-even {
+	0% {
+		margin-left: -480px;
+	}
+	100% {
+		margin-left: 0;
+	}
 }
 
-100%
-{
-margin-left
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-0;
-}
-}
-@
--moz-keyframes show-chat-even { 0% {
-	margin-left: -480px;
+@ -moz-keyframes show-chat-even {
+	0% {
+		margin-left: -480px;
+	}
+	100% {
+		margin-left: 0;
+	}
 }
 
-100%
-{
-margin-left
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-0;
-}
-}
-@
--webkit-keyframes show-chat-even { 0% {
-	margin-left: -480px;
+@ -webkit-keyframes show-chat-even {
+	0% {
+		margin-left: -480px;
+	}
+	100% {
+		margin-left: 0;
+	}
 }
 
-100%
-{
-margin-left
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-0;
-}
-}
-@
-keyframes show-chat-odd { 0% {
-	margin-right: -480px;
+@ keyframes show-chat-odd {
+	0% {
+		margin-right: -480px;
+	}
+	100% {
+		margin-right: 0;
+	}
 }
 
-100%
-{
-margin-right
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-0;
-}
-}
-@
--moz-keyframes show-chat-odd { 0% {
-	margin-right: -480px;
+@ -moz-keyframes show-chat-odd {
+	0% {
+		margin-right: -480px;
+	}
+	100% {
+		margin-right: 0;
+	}
 }
 
-100%
-{
-margin-right
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-0;
-}
-}
-@
--webkit-keyframes show-chat-odd { 0% {
-	margin-right: -480px;
+@ -webkit-keyframes show-chat-odd {
+	0% {
+		margin-right: -480px;
+	}
+	100% {
+		margin-right: 0;
+	}
 }
 
-100%
-{
-margin-right
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-0;
-}
-}
 .credits {
 	text-align: center;
 	margin-top: 35px;

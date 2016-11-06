@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>css3聊天窗口</title>
-<link rel="stylesheet" href="css/style.css" media="screen"
-	type="text/css" />
-</head>
 
-<body>
-	<div id="convo">
-		<ul class="chat-thread">
-			<li class="sender"><div class="headImg">
-					<img alt="" src="img/headImg2.jpg">
-				</div>Are we meeting today?</li>
-			<li class="receiver"><div class="headImg">
-					<img alt="" src="img/headImg1.jpg">
-				</div>yes, what time suits you?</li>
-			<li class="sender"><div class="headImg">
-					<img alt="" src="img/headImg2.jpg">
-				</div>I was thinking after lunch, I have a meeting in the morning</li>
-			<li class="receiver"><div class="headImg">
-					<img alt="" src="img/headImg1.jpg">
-				</div>Are we meeting today?</li>
-			<li class="sender"><div class="headImg">
-					<img alt="" src="img/headImg2.jpg">
-				</div>yes, what time suits you?</li>
-			<li class="receiver"><div class="headImg">
-					<img alt="" src="img/headImg1.jpg">
-				</div>I was thinking after lunch, I have a meeting in the morning</li>
-			<li class="sender"><div class="headImg">
-					<img alt="" src="img/headImg2.jpg">
-				</div>Are we meeting today?</li>
-			<li class="receiver"><div class="headImg">
-					<img alt="" src="img/headImg1.jpg">
-				</div>yes, what time suits you?</li>
-			<li class="sender"><div class="headImg">
-					<img alt="" src="img/headImg2.jpg">
-				</div>I was thinking after lunch, I have a meeting in the morning</li>
-			<li class="receiver"><div class="headImg">
-					<img alt="" src="img/headImg1.jpg">
-				</div>Are we meeting today?</li>
-			<li class="sender"><div class="headImg">
-					<img alt="" src="img/headImg2.jpg">
-				</div>yes, what time suits you?</li>
-			<li class="receiver"><div class="headImg">
-					<img alt="" src="img/headImg1.jpg">
-				</div>I was thinking after lunch, I have a meeting in the morning</li>
-		</ul>
-		<div>
-			
+	<head>
+		<meta charset="UTF-8">
+		<title>css3聊天窗口</title>
+		<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css" />
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="convo">
+			<ul class="chat-thread">
+				<li class="sender">
+					<div class="headImg">
+						<img alt="" src="img/headImg2.jpg">
+					</div>Are we meeting today?</li>
+				<li class="receiver">
+					<div class="headImg">
+						<img alt="" src="img/headImg1.jpg">
+					</div>yes, what time suits you?</li>
+				<li class="sender">
+					<div class="headImg">
+						<img alt="" src="img/headImg2.jpg">
+					</div>I was thinking after lunch, I have a meeting in the morning</li>
+				<li class="receiver">
+					<div class="headImg">
+						<img alt="" src="img/headImg1.jpg">
+					</div>Are we meeting today?</li>
+				<li class="sender">
+					<div class="headImg">
+						<img alt="" src="img/headImg2.jpg">
+					</div>yes, what time suits you?</li>
+				<li class="receiver">
+					<div class="headImg">
+						<img alt="" src="img/headImg1.jpg">
+					</div>I was thinking after lunch, I have a meeting in the morning</li>
+				<li class="sender">
+					<div class="headImg">
+						<img alt="" src="img/headImg2.jpg">
+					</div>Are we meeting today?</li>
+				<li class="receiver">
+					<div class="headImg">
+						<img alt="" src="img/headImg1.jpg">
+					</div>yes, what time suits you?</li>
+				<li class="sender">
+					<div class="headImg">
+						<img alt="" src="img/headImg2.jpg">
+					</div>I was thinking after lunch, I have a meeting in the morning</li>
+				<li class="receiver">
+					<div class="headImg">
+						<img alt="" src="img/headImg1.jpg">
+					</div>Are we meeting today?</li>
+				<li class="sender">
+					<div class="headImg">
+						<img alt="" src="img/headImg2.jpg">
+					</div>yes, what time suits you?</li>
+				<li class="receiver">
+					<div class="headImg">
+						<img alt="" src="img/headImg1.jpg">
+					</div>I was thinking after lunch, I have a meeting in the morning</li>
+			</ul>
 		</div>
-	</div>
-	<div style="text-align: center; clear: both"></div>
-</body>
+		<div style="text-align: center; clear: both"></div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if(!$.browser.webkit) {
+					$.mCustomScrollbar.defaults.axis = "y"; //enable 2 axis scrollbars by default
+					$(".chat-thread").mCustomScrollbar({
+						theme: "dark"
+					});
+				}
+			});
+		</script>
+	</body>
+
 </html>
